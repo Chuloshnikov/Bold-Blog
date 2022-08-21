@@ -1,0 +1,33 @@
+.app-wrapper {
+  display: grid;
+  grid-template-areas: "h h" "n c";
+  margin: 0 auto;
+  max-width: 1200px;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr ;
+  /* gap: 10px; */
+}
+
+.header {
+grid-area: h;
+background-color: black;
+}
+
+.header img {
+  width: 50px;
+  height: 50px;
+}
+
+.nav {
+  background-color: aliceblue;
+grid-area: n;
+}
+
+.content {
+  background-color: azure;
+grid-area: c;
+}
+
+.content img {
+  width: 700px;
+}
