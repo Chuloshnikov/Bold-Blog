@@ -8,26 +8,17 @@
   /* gap: 10px; */
 }
 
-.header {
-grid-area: h;
-background-color: black;
-}
-
-.header img {
-  width: 50px;
-  height: 50px;
-}
-
-.nav {
-  background-color: aliceblue;
-grid-area: n;
-}
-
-.content {
+.app-wrapper-content {
   background-color: azure;
-grid-area: c;
+  grid-area: c;
+  }
+
+.app-wrapper-content img {
+  max-width: 700px;
 }
 
-.content img {
-  width: 700px;
-}
+
+
+
+
+
