@@ -1,21 +1,36 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import classes from './Dialogs.module.css';
+import styles from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogsItem';
 import Message from './Message/Message';
 
 const Dialogs = (props) => {
-debugger;
     let dialogsElements = props.dialogs.map( dialog => <DialogItem name={dialog.name} id={dialog.id} /> );
     let messagesElements = props.messages.map( message => <Message message={message.message} />);
     
+    let newMessage = React.createRef();
+
+let addMessage = () => {
+    props.addMessage();
+}
+
+let onMessageChange = () => {
+    let text = newMessage.current.value;
+    props.ubdateNewMessageText(text);
+}
+
     return (
-            <div className={classes.dialogs}>
-                <div className={classes.dialogsItems}>
+            <div className={styles.dialogs}>
+                <div className={styles.dialogsItems}>
                     {dialogsElements}
                 </div>
-                <div className={classes.massages}>
-                    {messagesElements}
+                <div className={styles.messagesContainer}>
+                    <div className={styles.messages}>
+                        {messagesElements}
+                        <div>
+                            <textarea onChange={onMessageChange} ref={newMessage} value={props.newMessageText}/>
+                            <button onClick={addMessage}>add message</button>
+                        </div>
+                    </div>    
                 </div>
             </div>
     )

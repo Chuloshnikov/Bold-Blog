@@ -17,21 +17,30 @@
     color: gold; 
 }
 .dialogItem {
+   
+   
+}
+
+.dialogItem a {
     color: black;
     text-decoration: none;
     line-height: 3em;
-   
+}
+
+.messagesContainer{
+    border-left: 1px solid rgb(15, 15, 15);
 }
 
 .massages {
     padding: 10px;
-    border-left: 1px solid rgb(15, 15, 15);
 }
 
 .message {
+    
     background-color: rgb(253, 255, 240);
     padding: 10px;
     line-height: 3em;
     border-radius: 45px;
+    margin: 10px 10px 10px 10px;
 
 }
