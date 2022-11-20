@@ -39,7 +39,7 @@ let store = {
         return this._state;
     },
     subscribe (observer) {
-        this._callSubscriber = observer; //pattert "observer"
+        this._callSubscriber = observer; //pattern "observer"
     },
     dispatch (action) {
 
