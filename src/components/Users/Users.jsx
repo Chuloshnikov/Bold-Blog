@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './Users.module.css';
 import userIcon from '../../assets/images/userIcon.png';
+import { NavLink } from 'react-router-dom';
 
 
 let Users = (props) => {
-    
+    debugger;
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
-    debugger
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     };
@@ -22,10 +22,13 @@ let Users = (props) => {
             </div>
 
             { 
-                props.users.map( user => <div key={user.id}>
+                props.users.map( user => <div key={user.id.value}>
                 <span>
                     <div>
-                        <img src={user.picture.large != null ? user.picture.large : userIcon} alt="" className={styles.userPhoto}/>
+                        <NavLink to={'./../profile/*' + user.id.value}>
+                            <img src={user.picture.large != null ? user.picture.large : userIcon} alt="" 
+                            className={styles.userPhoto}/>
+                        </NavLink>
                     </div>
                     <div>
                             { user.followed
@@ -36,16 +39,12 @@ let Users = (props) => {
                 </span>
                     <span>
                         <span>
-                            <div>Title:{user.name.title}</div>
                             <div>First Name:{user.name.first}</div>
                             <div>Last Name:{user.name.last}</div>
                             <div>Gender: {user.gender}</div>
                         </span>
                         <span>
-                            <div>Location: {user.location.street.number} {user.location.street.name}</div>
-                            <div>City: {user.location.city}</div>
                             <div>Country: {user.location.country}</div>
-                            <div>Email: {user.email}</div>
                         </span>
                     </span>
                 </div>)
