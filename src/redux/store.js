@@ -12,7 +12,7 @@ let store = {
                 {id: 4, message: 'Hahahaha', likesCount: 6},
                 {id: 5, message: 'Cool', likesCount: 2},
             ],
-            newPostText: 'new post',
+            newPostText: '',
         },
         dialogsPage: {
             messages: [
@@ -39,7 +39,7 @@ let store = {
         return this._state;
     },
     subscribe (observer) {
-        this._callSubscriber = observer; //pattert "observer"
+        this._callSubscriber = observer; //pattern "observer"
     },
     dispatch (action) {
 

@@ -29,10 +29,6 @@ return (
             <div>
               <button onClick={onAddPost}>Add post</button>
             </div>
-            <div>
-              <button>Remove</button>
-            </div>
-            
           </div>
           <div className={styles.posts}>
               {postsElements}
